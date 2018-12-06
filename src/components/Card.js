@@ -13,8 +13,7 @@ class Card extends Component {
                     </div>
 
                     <small><Link to={{
-                        pathname: `/comentarios/${this.props.id}`,
-                        state: { id: this.props.id}
+                        pathname: `/comentarios/${this.props.id}`
                     }}>Comentarios</Link></small>
                 </a>
             </div>
