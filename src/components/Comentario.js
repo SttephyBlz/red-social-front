@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import Box from './Box';
+import Card from './Card';
 
 class Comentario extends Component {
 
@@ -24,7 +24,7 @@ class Comentario extends Component {
     }
 
 
-    renderBoxes = () => {
+    renderCards = () => {
 
         const commentsList = [
             { id:1, texto: 'Comentario 1', usuario: { nickname: 'hola', url: 'https://res.cloudinary.com/teepublic/image/private/s--SWWGIC9f--/t_Preview/b_rgb:6e2229,c_limit,f_auto,h_313,q_90,w_313/v1476632747/production/designs/737485_1' }}, 
@@ -36,11 +36,11 @@ class Comentario extends Component {
             return element.id === this.state.postId*1;
         });
 
-        const postsCardsList = filteredComments.map((comentario, key) => {
-            return <Box key={key} text={comentario.texto} usuario={comentario.usuario} />
+        const commentsCardsList = filteredComments.map((comentario, key) => {
+            return <Card key={key} text={comentario.texto} usuario={comentario.usuario} />
         });
 
-        return postsCardsList;
+        return commentsCardsList;
     }
 
     render() {
@@ -49,7 +49,7 @@ class Comentario extends Component {
                 
                 <h1>Comentarios</h1>                
             
-                {this.renderBoxes()}
+                {this.renderCards()}
             
                 <Link to="/">Publicaciones</Link>
                 

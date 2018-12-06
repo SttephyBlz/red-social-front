@@ -1,20 +1,22 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class Box extends Component {
 
     render() {
         return (
-            <div className="card">
-                <div className="card-body">
-                    <div>
-                        <img src={this.props.usuario.url} width="32" height="32" alt='algo' />
-                        {this.props.usuario.nickname}
+            <div className="list-group">
+                <a href className="list-group-item list-group-item-action flex-column align-items-start">
+                    <div className="d-flex w-100 justify-content-between">
+                        <h5 className="mb-1">{this.props.nombre}</h5>
                     </div>
-                    <div className="card-text">
-                        <h5>{this.props.text}</h5>                        
-                    </div>
-                </div>
+
+                    <small><Link to={{
+                        pathname: `/comentarios/${this.props.id}`
+                    }}>Comentarios</Link></small>
+                </a>
             </div>
+            
         );
     }
 }

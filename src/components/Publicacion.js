@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Card from './Card';
+import Box from './Box';
 
 class Publicacion extends Component {
 
@@ -11,22 +11,22 @@ class Publicacion extends Component {
         };
     }
 
-    renderCards = () => {
+    renderBoxes = () => {
 
         const postsList = [{ id:1, nombre: 'Publicación 1'}, { id:2, nombre: 'Publicación 2'}, { id:3, nombre: 'Publicación 3'}];
 
-        const postsCardsList = postsList.map((publicacion, key) => {
-            return <Card key={key} id={publicacion.id} nombre={publicacion.nombre}  />
+        const postsBoxesList = postsList.map((publicacion, key) => {
+            return <Box key={key} id={publicacion.id} nombre={publicacion.nombre}  />
         });
 
-        return postsCardsList;
+        return postsBoxesList;
     }
 
     render() {
         return (
             <div className="publicacion">
                 <h1 className="">Publicaciones</h1>
-                {this.renderCards()}
+                {this.renderBoxes()}
             </div>
         );
     }
